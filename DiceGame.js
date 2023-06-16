@@ -6,17 +6,19 @@ const theWinnerIs = " Hurray!!, the winner of this game is Player "
 /*-------------------------------------------------*/
 /* definition of HTML elements to be modified by JS*/
 /*-------------------------------------------------*/
-const roundScoreElement1 = document.getElementById('roundScore1');
+const roundScoreElement1 = document.getElementById('roundScore1'); /*<h2*/
 const roundScoreElement2 = document.getElementById('roundScore2');
-const globalScoreElement1 = document.getElementById('globalScore1');
+const globalScoreElement1 = document.getElementById('globalScore1');/*h1*/
 const globalScoreElement2 = document.getElementById('globalScore2');
-const tickPlayerElement1 = document.getElementById('tickPlayer1');
-const tickPlayerElement2 = document.getElementById('tickPlayer2');
-const diceIcon = document.getElementById('diceIcon');
+const tickPlayerElement1 = document.getElementById('tickPlayer1'); /*img*/
+const tickPlayerElement2 = document.getElementById('tickPlayer2'); 
+const diceIconElement = document.getElementById('diceIcon');  
+const throwDiceElement = document.getElementById('throwDiceIcon');  
+const holdScoreElement = document.getElementById('holdScore');      /*img*/
 console.log(tickPlayerElement1);
 console.log(tickPlayerElement2);
 // Get a reference to the image element
-const imageElement = document.getElementById("new-game");
+const newGameElement = document.getElementById("newGame");
 
 /*-------------------------------------------------*/
 /*definition and initialization of global variables*/
@@ -151,8 +153,27 @@ function holdInGlobalScore()
     selectPlayer1();
     break;
   }
-
+}
+/*
+var myImage = document.getElementById('myImage');
+function addHoverEffect() {
+  myImage.classList.add('hover-effect');
+}
+myImage.addEventListener('touchstart', addHoverEffect);
+*/
+function removeHoverEffect() {
+  tickPlayerElement1.classList = remove('hover-effect');
+  tickPlayerElement2.classList = remove('hover-effect');
+  diceIconElement.classList = remove('hover-effect');
+  throwDiceElement.classList = remove('hover-effect');
+  holdScoreElement.classList = remove('hover-effect');
 }
 
+
+tickPlayerElement1.addEventListener('touchend', removeHoverEffect);
+tickPlayerElement2.addEventListener('touchend', removeHoverEffect);
+diceIconElement.addEventListener('touchend', removeHoverEffect);
+throwDiceElement.addEventListener('touchend', removeHoverEffect);
+holdScoreElement.addEventListener('touchend', removeHoverEffect);
 
 

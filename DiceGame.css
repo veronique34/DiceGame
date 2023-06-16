@@ -10,7 +10,7 @@
   position: absolute;
   height: 100vh;
   z-index: 1;
-  border: 30px inset burlywood;
+  border: 3em inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
 /* foreground container */
@@ -19,7 +19,7 @@
   height: 100vh;
   z-index: 2;
   padding: 20px;
-  border: 30px inset burlywood;
+  border: 3em inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
 
@@ -27,7 +27,7 @@ body {
   font-family: 'Lato-Black', Arial, sans-serif;
 }
 h1 {
-  font-size: 600%;
+  font-size: 300%;
   color: darkred;
 }
 h2,h4 {

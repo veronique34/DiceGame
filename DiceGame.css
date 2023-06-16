@@ -9,35 +9,51 @@ body {
   height: 100vh;
 }
 h1 {
-  font-size: 400%;
+  font-size: 600%;
 }
-h1,h2,h3,h4 {
+h1,h2,h4 {
 color: darkgrey; 
 }
-p {
+p, h3 {
 color: black;
 }
 h1, h2, h3, p, img {margin: 5px; }
 
+span {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  color: darkgrey; 
+}
+.svg-image {
+  fill: red;
+}
+
 .colored-box {
-  background-color: #ff0000; 
+  background-color:red; 
   color: #ffffff; 
   padding: 20px; /* fixed size despites terminal size */
   
 }
 .border-shadow {
   border: 10px solid burlywood; 
-  box-shadow: 0 10px 10px 10px rgba(34, 28, 3, 0.534);
+  box-shadow: 5px 10px 5px 10px rgba(34, 28, 3, 0.534);
   /* syntax box-shadow: <horizontal-offset> <vertical-offset> 
   <blur-radius> <spread-radius> <color> <inset>;*/
 }
 .border-test {
   border: 5px solid burlywood; 
 }
-/* there no hover effet in BootStrap 5.3.0 */
+/* there no hover effet provided by BootStrap 5.3.0 */
 .hover-effect {
+
+}
+/* to get the shadow only when hovering */
+.hover-effect:hover {
+  box-shadow: 5px 10px 5px 10px rgba(71, 223, 11, 0.534);
   opacity: 0.5;
-  background-color: greenyellow; 
+  /* hand icon */
+  cursor: pointer;
 }
 .inline-block {
   display: inline-block;

@@ -26,11 +26,12 @@
     <!--Title and button (+) to start a new game                        -->
     <!---------------------------------------------------------------->
     <header class="row align-items-start border-test">   
-        <h2 class="col text-center">Board Game with Dice for 2 Players</h2>  
+        <h2 class="col text-center">BORDER GAME WITH DICE</h2>  
         <div class="text-center">
             <p>New Game</p>
-            <img id="new-game" src="./images/plus-circle.svg" width="50" height="50" alt="clickable 
-            start of new game" onclick="selectNewGame()" class="hover-effect" >
+            <img id="new-game" src="./images/plus-circle.svg" width="50" height="50" 
+            alt="clickable start of new game" 
+            onclick="selectNewGame()" touchend="selectNewGame()" class="hover-effect" >
 
         </div>
 
@@ -41,24 +42,27 @@
     <main class="row flex-grow-1 align-items-center"> 
         <!-- flex-grow-1 allows the assignement of the remaining space to this row -->
         <div class="col-4 border-test" >
-            <span onclick="selectPlayer1()" class="hover-effect">
-                <h3>PLAYER 1</h3>
-                <img id="tickPlayer1" src="./images/circle.svg" width="25" height="25" alt="selectable player">
+            <span container>
+                <h3>PLAYER 1 : </h3>
+                <img id="tickPlayer1" src="./images/circle.svg" width="25" height="25" 
+                alt="selectable player" onclick="selectPlayer1()" touchend="selectPlayer1()" class="hover-effect">
             </span>
             <h1 id="globalScore1" class="text-center">0</h1>
         </div>
         <div class="col-4 border-test">
-            <div class="text-center"onclick="throwDice()"">
+            <div class="text-center"onclick="throwDice()" touchend="throwDice()">
                 <p >Throw Dice</p>
                 <img id="diceIcon" src="./images/Dice-Image.JPG" width="75" height="75" 
-                alt="Clickable Image of the Dice"  class="hover-effect" >          
+                alt="Clickable Image of the Dice" class="hover-effect svg-image" >          
             </div>               
         </div>
         <div class="col-4 border-test">
-            <div onclick="selectPlayer2()" class="hover-effect">
-                <h3>PLAYER 2</h3>
-                <img id="tickPlayer2" src="./images/circle.svg" width="25" height="25" alt="selectable player">
-            </div>
+            <span >
+                <h3>PLAYER 2 : </h3>
+                <img id="tickPlayer2" src="./images/circle.svg" width="25" height="25" 
+                alt="selectable player" onclick="selectPlayer2()" 
+                touchend="selectPlayer2()" class="hover-effect">
+            </span>
             <h1 id="globalScore2" class="text-center">0</h1>
         </div>
     </main>
@@ -75,9 +79,11 @@
             </div>
         </div>
         <div class="col-4 border-test">
-         <div class="text-center hover-effect" onclick="holdInGlobalScore()">    
+         <div class="text-center" ">    
             <p>Hold</p>
-            <img src="./images/box-arrow-in-down.svg" width="50" height="50" alt="hold the points in the global score">
+            <img src="./images/box-arrow-in-down.svg" width="50" height="50" 
+            alt="hold the points in the global score" 
+            onclick="holdInGlobalScore()" touchend="holdInGlobalScore()" class="hover-effect" >
           </div>
         </div>
         <div class="col-4 border-test">

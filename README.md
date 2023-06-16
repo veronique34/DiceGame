@@ -1,4 +1,4 @@
-# Project Association L'Or Environnement
+# Project Dice Game
 ***************************************
 ### General Info
 ***
@@ -18,5 +18,5 @@ A list of technologies used within the project:
 * bootstrap.bundle.min.js
 * bootstrap.css
 ## EXECUTION:
-* sur : https://veronique34.github.io/assos/DiceGame.html
+* sur : https://veronique34.github.io/DiceGame/DiceGame.html
 

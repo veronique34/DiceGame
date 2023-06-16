@@ -1,15 +1,10 @@
-/*-------------------------------------------------*/
-/*definition and initialization of global variables*/
-/*-------------------------------------------------*/
-var currentPlayer = 0; /* means no player selected */
-var roundScore1 = 0;
-var roundScore2 = 0;
-var globalScore1 = 0;
-var globalScore2 = 0;
+/*-------------------------------------*/
+/* definition of constants           */
+/*------------------------------------*/
 const choosePlayer = "To Start The Game, Please Select The First Player";
 const theWinnerIs = " Hurray!!, the winner of this game is Player "
 /*-------------------------------------------------*/
-/* definition of HTML elements to be modified */
+/* definition of HTML elements to be modified by JS*/
 /*-------------------------------------------------*/
 const roundScoreElement1 = document.getElementById('roundScore1');
 const roundScoreElement2 = document.getElementById('roundScore2');
@@ -23,17 +18,20 @@ console.log(tickPlayerElement2);
 // Get a reference to the image element
 const imageElement = document.getElementById("new-game");
 
-// Add event listener for mouseenter event
-imageElement.addEventListener('mouseenter', handleMouseEnter);
-
-// Add event listener for mouseleave event
-imageElement.addEventListener('mouseleave', handleMouseLeave);
 
 /* exécution of initialisation */
-
-selectNewGame(); 
-
-
+/*-------------------------------------------------*/
+/*definition and initialization of global variables*/
+/*-------------------------------------------------*/
+var currentPlayer = 0; /* means no player selected */
+var roundScore1 = 0;
+var roundScore2 = 0;
+var globalScore1 = 0;
+var globalScore2 = 0;
+roundScoreElement1.textContent = roundScore1;
+roundScoreElement2.textContent = roundScore2;
+globalScoreElement1.textContent = globalScore1; 
+globalScoreElement2.textContent = globalScore2;  
 /*-------------------------------------------------*/
 /* definition of local fonctions   */
 /*-------------------------------------------------*/
@@ -50,11 +48,10 @@ function throwDice() {
   './images/dice-2-fill.svg',
   './images/dice-3-fill.svg',
   './images/dice-4-fill.svg',
-  './images/dice-5-fill.svg',
-  './images/dice-6-fill.svg'];
+  './images/dice-5.svg',
+  './images/dice-6.svg'];
   let diceFace;
   diceFace = getRandomNumber();
-  diceIcon.style.color = "red";
   diceIcon.src = diceFaceImage[diceFace-1];
   
   if (currentPlayer==1) {
@@ -86,19 +83,6 @@ function throwDice() {
   console.log("roundScore1",roundScoreElement1.textContent);
   console.log("roundScore2",roundScoreElement2.textContent);
 }
-
-// Function to handle mouseenter event
-function handleMouseEnter() {
-  // Add a CSS class to apply the hovering effect
-  imageElement.classList.add('hover-effect');
-}
-
-// Function to handle mouseleave event
-function handleMouseLeave() {
-  // Remove the CSS class to remove the hovering effect
-  imageElement.classList.remove('hover-effect');
-}
-
 function selectNewGame() {
   if (currentPlayer ==0)
   {
@@ -167,7 +151,6 @@ function holdInGlobalScore()
   }
 
 }
-
 
 
 

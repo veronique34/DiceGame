@@ -1,11 +1,11 @@
-/* local insert of the font Lato-Blacl */
+/* local insert of the font Lato-Black */
 /* from google fonts https://fonts.google.com/specimen/Lato */
 @font-face {
   font-family: 'Lato-Black';
   src: url('./fonts/Lato-Black.ttf') format('truetype');
   font-style: normal;
 }
-
+/* 2 sided background */
 .background-container {
   position: absolute;
   height: 100vh;
@@ -13,7 +13,7 @@
   border: 30px inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
-
+/* foreground container */
 .overlap-container {
   position: absolute;
   height: 100vh;
@@ -54,15 +54,7 @@ span {
   padding: 20px; /* fixed size despites terminal size */
   margin-bottom: 40px;
 }
-.border-shadow {
-  border: 10px solid burlywood; 
-  box-shadow: 5px 5px 5px 5px rgba(34, 28, 3, 0.534);
-  /* syntax box-shadow: <horizontal-offset> <vertical-offset> 
-  <blur-radius> <spread-radius> <color> <inset>;*/
-}
-.border-test {
-  border: 5px solid burlywood; 
-}
+
 /* there no hover effet provided by BootStrap 5.3.0 */
 .hover-effect {
 

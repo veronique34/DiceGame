@@ -18,8 +18,6 @@ console.log(tickPlayerElement2);
 // Get a reference to the image element
 const imageElement = document.getElementById("new-game");
 
-
-/* exécution of initialisation */
 /*-------------------------------------------------*/
 /*definition and initialization of global variables*/
 /*-------------------------------------------------*/
@@ -39,15 +37,19 @@ globalScoreElement2.textContent = globalScore2;
 function getRandomNumber() {
   return Math.floor(Math.random() * 6) + 1;
 }
+/* function that displays the element of a table */
+/* after having randomly selected its table index */
+/* and calculate the current score */
+
 function throwDice() {
   if (currentPlayer ==0)
   {
     alert(choosePlayer);
     return;}
-  let diceFaceImage = ['./images/dice-1-fill.svg',
-  './images/dice-2-fill.svg',
-  './images/dice-3-fill.svg',
-  './images/dice-4-fill.svg',
+  let diceFaceImage = ['./images/dice-1.svg',
+  './images/dice-2.svg',
+  './images/dice-3.svg',
+  './images/dice-4.svg',
   './images/dice-5.svg',
   './images/dice-6.svg'];
   let diceFace;
@@ -84,11 +86,8 @@ function throwDice() {
   console.log("roundScore2",roundScoreElement2.textContent);
 }
 function selectNewGame() {
-  if (currentPlayer ==0)
-  {
-    alert(choosePlayer);
-    return;
-  }
+  currentPlayer =0;
+  alert(choosePlayer);
   console.log('select new game');
   roundScore1 = 0 ;
   roundScore2 = 0; 
@@ -97,8 +96,11 @@ function selectNewGame() {
   roundScoreElement1.textContent = roundScore1;
   roundScoreElement2.textContent = roundScore2;
   globalScoreElement1.textContent = globalScore1; 
-  globalScoreElement2.textContent = globalScore2;  
+  globalScoreElement2.textContent = globalScore2; 
+  tickPlayerElement1.src = "./images/circle.svg";
+  tickPlayerElement2.src = "./images/circle.svg";
 }
+/* set the currentplayer to 1 and */
 function selectPlayer1() {
   if (currentPlayer == 0) /*no initial selection*/
   {
@@ -106,7 +108,7 @@ function selectPlayer1() {
   console.log("selected player", currentPlayer);
   tickPlayerElement1.src = "./images/check2-circle.svg";
   tickPlayerElement2.src = "./images/circle.svg";
-}
+ }
 }
 function selectPlayer2() {
   if (currentPlayer == 0) /* no initial selection */

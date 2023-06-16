@@ -6,13 +6,25 @@
   font-style: normal;
 }
 
-body {
-  font-family: 'Lato-Black', Arial, sans-serif;
+.background-container {
+  position: absolute;
   height: 100vh;
-  background-color:  white;
-  padding: 10px;
+  z-index: 1;
   border: 30px inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
+}
+
+.overlap-container {
+  position: absolute;
+  height: 100vh;
+  z-index: 2;
+  padding: 20px;
+  border: 30px inset burlywood;
+  box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
+}
+
+body {
+  font-family: 'Lato-Black', Arial, sans-serif;
 }
 h1 {
   font-size: 600%;

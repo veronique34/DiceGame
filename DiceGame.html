@@ -18,10 +18,19 @@
     <link rel="stylesheet" href="./DiceGame.css">
     <title>Game of Dices</title>
 </head>
-<!-- ontouchstart="selectPlayer()" 
-    -ontouchstart="selectNewGame()"-->
 
-<body class="container-fluid d-flex flex-column"> <!--border border-secondary border-5 "-->
+<!-- background container overlapped by the foreground container-->
+
+
+<body > <!--definition of the background colours different for each player --> 
+    <div class="background-container container-fluid d-flex flex-column "> 
+        <div class="row flex-fill">
+            <div class="col" style="background-color: gainsboro;"></div>
+            <div class="col" style="background-color: white"></div>
+        </div>
+    </div> 
+    <!--definition of the foreground display as a whole Bootstrap container--> 
+    <div class="overlap-container container-fluid d-flex flex-column">
     <!---------------------------------------------------------------->
     <!--Title and button (+) to start a new game                        -->
     <!---------------------------------------------------------------->
@@ -98,6 +107,6 @@
     <!-- Bootstrap JavaScript -->
     <script src="./bootstrap/bootstrap.bundle.min.js"></script>
     <script src="DiceGame.js"></script>
-
+</div>
 </body>
 </html>

@@ -21,11 +21,11 @@
 <!-- ontouchstart="selectPlayer()" 
     -ontouchstart="selectNewGame()"-->
 
-<body class="container-fluid d-flex flex-column m-3 border-shadow"> <!--border border-secondary border-5 "-->
+<body class="container-fluid d-flex flex-column"> <!--border border-secondary border-5 "-->
     <!---------------------------------------------------------------->
     <!--Title and button (+) to start a new game                        -->
     <!---------------------------------------------------------------->
-    <header class="row align-items-start border-test">   
+    <header class="row align-items-start">   
         <h2 class="col text-center">BORDER GAME WITH DICE</h2>  
         <div class="text-center">
             <p>New Game</p>
@@ -41,7 +41,7 @@
     <!------------------------------------------------------------------------->
     <main class="row flex-grow-1 align-items-center"> 
         <!-- flex-grow-1 allows the assignement of the remaining space to this row -->
-        <div class="col-4 border-test" >
+        <div class="col-4" >
             <span container>
                 <h3>PLAYER 1 : </h3>
                 <img id="tickPlayer1" src="./images/circle.svg" width="25" height="25" 
@@ -49,14 +49,14 @@
             </span>
             <h1 id="globalScore1" class="text-center">0</h1>
         </div>
-        <div class="col-4 border-test">
+        <div class="col-4 ">
             <div class="text-center"onclick="throwDice()" touchend="throwDice()">
                 <p >Throw Dice</p>
                 <img id="diceIcon" src="./images/Dice-Image.JPG" width="75" height="75" 
                 alt="Clickable Image of the Dice" class="hover-effect svg-image" >          
             </div>               
         </div>
-        <div class="col-4 border-test">
+        <div class="col-4 ">
             <span >
                 <h3>PLAYER 2 : </h3>
                 <img id="tickPlayer2" src="./images/circle.svg" width="25" height="25" 
@@ -70,7 +70,7 @@
     <!--Display of round scores & button !+! to hold and add round to global score-->
     <!---------------------------------------------------------------->
     <footer class="row" >
-        <div class="col-4 border-test">
+        <div class="col-4 ">
             <div class="col d-flex justify-content-center align-items-center">
                 <div class="colored-box">
                     <p> Current </p>
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 border-test">
+        <div class="col-4 ">
          <div class="text-center" ">    
             <p>Hold</p>
             <img src="./images/box-arrow-in-down.svg" width="50" height="50" 
@@ -86,7 +86,7 @@
             onclick="holdInGlobalScore()" touchend="holdInGlobalScore()" class="hover-effect" >
           </div>
         </div>
-        <div class="col-4 border-test">
+        <div class="col-4 ">
             <div class="col d-flex justify-content-center align-items-center">
                 <div class="colored-box">
                     <p> Current </p>

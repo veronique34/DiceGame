@@ -1,0 +1,7 @@
+*.txt  #Ignore files with text extension
+*.jpg  # Ignore all JPEG image files
+*.png  # Ignore all PNG image files
+*.pdf  # Ignore all PDF files
+./bootstrap/*.*
+./images/*.*
+./fonts/*.*

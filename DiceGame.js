@@ -13,12 +13,19 @@ const globalScoreElement2 = document.getElementById('globalScore2');
 const tickPlayerElement1 = document.getElementById('tickPlayer1'); /*img*/
 const tickPlayerElement2 = document.getElementById('tickPlayer2'); 
 const diceIconElement = document.getElementById('diceIcon');  
-const throwDiceElement = document.getElementById('throwDiceIcon');  
 const holdScoreElement = document.getElementById('holdScore');      /*img*/
+const textPlayerElement1 = document.getElementById('textPlayer1');    /*h3*/
+const textPlayerElement2 = document.getElementById('textPlayer2');    /*h3*/
+const newGameElement = document.getElementById("newGame");
 console.log(tickPlayerElement1);
 console.log(tickPlayerElement2);
+console.log(diceIconElement);
+console.log(textPlayerElement1);
+console.log(textPlayerElement2);
+console.log(textPlayerElement2.textContent);
+console.log(textPlayerElement1.textContent);
 // Get a reference to the image element
-const newGameElement = document.getElementById("newGame");
+
 
 /*-------------------------------------------------*/
 /*definition and initialization of global variables*/
@@ -89,7 +96,6 @@ function throwDice() {
 }
 function selectNewGame() {
   currentPlayer =0;
-  alert(choosePlayer);
   console.log('select new game');
   roundScore1 = 0 ;
   roundScore2 = 0; 
@@ -101,6 +107,11 @@ function selectNewGame() {
   globalScoreElement2.textContent = globalScore2; 
   tickPlayerElement1.src = "./images/circle.svg";
   tickPlayerElement2.src = "./images/circle.svg";
+  textPlayerElement2.textContent = "PLAYER 1 : ";
+  textPlayerElement2.textContent = "PLAYER 2 : ";
+  textPlayerElement1.style.color = 'black';
+  textPlayerElement2.style.color = 'black';
+  alert(choosePlayer);
 }
 /* set the currentplayer to 1 and */
 function selectPlayer1() {
@@ -134,7 +145,12 @@ function holdInGlobalScore()
     roundScore1 = 0;
     roundScoreElement1.textContent = roundScore1;
     if (globalScore1 >= 100)
-    {alert (theWinnerIs,currentPlayer);
+    { textPlayerElement1.style.color = 'red';
+      textPlayerElement1.textContent = "WINNER !";
+      console.log("globalScore1",globalScoreElement1.textContent);
+      console.log("globalScore2",globalScoreElement2.textContent);
+      console.log("roundScore1",roundScoreElement1.textContent);
+      console.log("roundScore2",roundScoreElement2.textContent);
       return;
     }
     currentPlayer=0; 
@@ -146,7 +162,12 @@ function holdInGlobalScore()
     roundScore2 = 0;
     roundScoreElement2.textContent = roundScore2;
     if (globalScore2 >= 100)
-    {alert (theWinnerIs,currentPlayer);
+    { textPlayerElement2.style.color = 'red';
+      textPlayerElement2.textContent = "WINNER !";
+      console.log("globalScore1",globalScoreElement1.textContent);
+      console.log("globalScore2",globalScoreElement2.textContent);
+      console.log("roundScore1",roundScoreElement1.textContent);
+      console.log("roundScore2",roundScoreElement2.textContent);
       return;
     }
     currentPlayer=0; 
@@ -165,15 +186,15 @@ function removeHoverEffect() {
   tickPlayerElement1.classList = remove('hover-effect');
   tickPlayerElement2.classList = remove('hover-effect');
   diceIconElement.classList = remove('hover-effect');
-  throwDiceElement.classList = remove('hover-effect');
+  diceIconElement.classList = remove('hover-effect');
   holdScoreElement.classList = remove('hover-effect');
+  newGameElement.classList = remove('hover-effect'); 
 }
-
 
 tickPlayerElement1.addEventListener('touchend', removeHoverEffect);
 tickPlayerElement2.addEventListener('touchend', removeHoverEffect);
 diceIconElement.addEventListener('touchend', removeHoverEffect);
-throwDiceElement.addEventListener('touchend', removeHoverEffect);
+holdScoreElement.addEventListener('touchend', removeHoverEffect);
 holdScoreElement.addEventListener('touchend', removeHoverEffect);
 
 

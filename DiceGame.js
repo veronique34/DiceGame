@@ -1,11 +1,19 @@
 /*-------------------------------------*/
-/* definition of constants           */
+/* definition of constants           
 /*------------------------------------*/
 const choosePlayer = "To Start The Game, Please Select The First Player";
 const theWinnerIs = " WINNER ! ";
 const maximumScore = 100;
+const diceFaceImage = /* image of each face of the dice */
+['./images/dice-1.svg',
+  './images/dice-2.svg',
+  './images/dice-3.svg',
+  './images/dice-4.svg',
+  './images/dice-5.svg',
+  './images/dice-6.svg'];
+
 /*-------------------------------------------------*/
-/* definition of HTML elements to be modified by JS*/
+/* definition of HTML node elements to be modified by JS
 /*-------------------------------------------------*/
 const roundScoreElement1 = document.getElementById('roundScore1'); /*<h2*/
 const roundScoreElement2 = document.getElementById('roundScore2');
@@ -18,25 +26,9 @@ const holdScoreElement = document.getElementById('holdScore');      /*img*/
 const textPlayerElement1 = document.getElementById('textPlayer1');    /*h3*/
 const textPlayerElement2 = document.getElementById('textPlayer2');    /*h3*/
 const newGameElement = document.getElementById("newGame");
-const diceFaceImage = /* image of each face of the dice */
-['./images/dice-1.svg',
-  './images/dice-2.svg',
-  './images/dice-3.svg',
-  './images/dice-4.svg',
-  './images/dice-5.svg',
-  './images/dice-6.svg'];
-console.log(tickPlayerElement1);
-console.log(tickPlayerElement2);
-console.log(diceIconElement);
-console.log(textPlayerElement1);
-console.log(textPlayerElement2);
-console.log(textPlayerElement2.textContent);
-console.log(textPlayerElement1.textContent);
-// Get a reference to the image element
-
 
 /*-------------------------------------------------*/
-/*definition and initialization of global variables*/
+/*definition and initialization of global variables
 /*-------------------------------------------------*/
 var currentPlayer = 0; /* means no player selected */
 var roundScore1 = 0;
@@ -47,23 +39,28 @@ roundScoreElement1.textContent = roundScore1;
 roundScoreElement2.textContent = roundScore2;
 globalScoreElement1.textContent = globalScore1; 
 globalScoreElement2.textContent = globalScore2;  
+/*-------------------------------------------------------*/
+/* initialization of listening events 
+/*-----------------------------------------------------*/
 tickPlayerElement1.addEventListener('touchend', removeHoverEffect);
 tickPlayerElement2.addEventListener('touchend', removeHoverEffect);
 diceIconElement.addEventListener('touchend', removeHoverEffect);
 holdScoreElement.addEventListener('touchend', removeHoverEffect);
-holdScoreElement.addEventListener('touchend', removeHoverEffect);
+newGameElement.addEventListener('touchend', removeHoverEffect);
 
 /*-------------------------------------------------*/
-/* definition of local fonctions   */
+/* definition of local fonctions   
 /*-------------------------------------------------*/
 /* function returning randomly an integer between 1 and 6 */
 function getRandomNumber() {
   return Math.floor(Math.random() * 6) + 1;
 }
-/* function after having randomly selected the dice number */
-/* displays the correct dice face */
-/* calculate the current score */
-
+/*-------------------------------------------------*/
+/* function called upon selecting the dice image
+/* displays the correct dice face
+/*  according to random number and 
+/* calculates the current score 
+/*-------------------------------------------------*/
 function throwDice() {
   if (globalScore1 >= maximumScore) {return;}
   if (globalScore2 >= maximumScore) {return;}
@@ -96,16 +93,13 @@ function throwDice() {
     } 
     roundScoreElement2.textContent = roundScore2;
   }
-  console.log("dice for player",currentPlayer,roundScore1,roundScore2)
-  console.log(diceIcon.style.color);
-  console.log("globalScore1",globalScoreElement1.textContent);
-  console.log("globalScore2",globalScoreElement2.textContent);
-  console.log("roundScore1",roundScoreElement1.textContent);
-  console.log("roundScore2",roundScoreElement2.textContent);
 }
+/*-------------------------------------------------
+/*  function called upon clicking the 
+/*  icon new game, re-initializes all variables
+/*-------------------------------------------------*/
 function selectNewGame() {
   currentPlayer =0;
-  console.log('select new game');
   roundScore1 = 0 ;
   roundScore2 = 0; 
   globalScore1 = 0;
@@ -116,18 +110,19 @@ function selectNewGame() {
   globalScoreElement2.textContent = globalScore2; 
   tickPlayerElement1.src = "./images/circle.svg";
   tickPlayerElement2.src = "./images/circle.svg";
-  textPlayerElement1.textContent = "PLAYER 1 : ";
-  textPlayerElement2.textContent = "PLAYER 2 : ";
+  textPlayerElement1.textContent = "PLAYER 1 ";
+  textPlayerElement2.textContent = "PLAYER 2 ";
   textPlayerElement1.style.color = 'black';
   textPlayerElement2.style.color = 'black';
   alert(choosePlayer);
 }
-/* set the currentplayer to 1 and */
+/*-------------------------------------------------*/
+/* fonctions set the currentplayer and tick the box
+/*-------------------------------------------------*/
 function selectPlayer1() {
   if (currentPlayer == 0) /*no initial selection*/
   {
   currentPlayer = 1;
-  console.log("selected player", currentPlayer);
   tickPlayerElement1.src = "./images/check2-circle.svg";
   tickPlayerElement2.src = "./images/circle.svg";
  }
@@ -136,12 +131,16 @@ function selectPlayer2() {
   if (currentPlayer == 0) /* no initial selection */
   {
   currentPlayer = 2;
-  console.log("selected player", currentPlayer);
   tickPlayerElement2.src = "./images/check2-circle.svg";
   tickPlayerElement1.src = "./images/circle.svg";
   }
 }
-/* When the player clicks on "hold", its round score is added to the global score */
+/*-------------------------------------------------*/
+/* Function called when the player clicks on "hold", 
+/* its round score is added to the global score .
+/* if the maximum of 100 is reached, the game is 
+/* stopped and the winner est indicated
+/*-------------------------------------------------*/
 function holdInGlobalScore()
 { 
   switch (currentPlayer) {
@@ -156,10 +155,6 @@ function holdInGlobalScore()
     if (globalScore1 >= maximumScore)
     { textPlayerElement1.style.color = 'red';
       textPlayerElement1.textContent = theWinnerIs;
-      console.log("globalScore1",globalScoreElement1.textContent);
-      console.log("globalScore2",globalScoreElement2.textContent);
-      console.log("roundScore1",roundScoreElement1.textContent);
-      console.log("roundScore2",roundScoreElement2.textContent);
       return;
     }
     currentPlayer=0; 
@@ -173,10 +168,6 @@ function holdInGlobalScore()
     if (globalScore2 >= maximumScore)
     { textPlayerElement2.style.color = 'red';
       textPlayerElement2.textContent = theWinnerIs;
-      console.log("globalScore1",globalScoreElement1.textContent);
-      console.log("globalScore2",globalScoreElement2.textContent);
-      console.log("roundScore1",roundScoreElement1.textContent);
-      console.log("roundScore2",roundScoreElement2.textContent);
       return;
     }
     currentPlayer=0; 
@@ -184,17 +175,15 @@ function holdInGlobalScore()
     break;
   }
 }
-/*
-var myImage = document.getElementById('myImage');
-function addHoverEffect() {
-  myImage.classList.add('hover-effect');
-}
-myImage.addEventListener('touchstart', addHoverEffect);
-*/
+/*-------------------------------------------------
+/* fct removes all hover effet at once. It is      
+/* called in JS with an event listener on 'touchend'   
+/* , while touching the screen is directly delt with 
+/* in the html with 'ontouchscreen'
+/*-------------------------------------------------*/
 function removeHoverEffect() {
   tickPlayerElement1.classList.remove('hover-effect');
   tickPlayerElement2.classList.remove('hover-effect');
-  diceIconElement.classList.remove('hover-effect');
   diceIconElement.classList.remove('hover-effect');
   holdScoreElement.classList.remove('hover-effect');
   newGameElement.classList.remove('hover-effect'); 

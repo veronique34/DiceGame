@@ -14,7 +14,7 @@ body {
   z-index: 1;
   height: 100vh;
   box-sizing: border-box;
-  border: 2vw inset burlywood;
+  border: 2vh inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
 /* foreground container */
@@ -22,11 +22,22 @@ body {
   position: absolute;
   z-index: 2;
   height: 100vh;
-  padding: 2vw;
+  padding: 2vh;
   border: 5vh inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
-
+img {
+  width:8vh; 
+  height: 8vh;
+}
+#diceIcon {
+  width:75px; 
+  height: 75px; 
+}
+#tickPlayer1, #tickPlayer2 {
+  width:5vh; 
+  height: 5vh; 
+}
 h1 {
   font-size: 300%;
   color: darkred;
@@ -37,28 +48,28 @@ color: darkgrey;
 p, h3 {
 color: black;
 text-align: center;
+font-size: 5vh;
 }
-h1, h2, h3, p, img {margin: 5px; }
+h1, h2, h3, p, img {margin: 1vh; }
 
 span {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin: 5vh;
   color: darkgrey; 
 }
-.svg-image {
-  fill: red;
-}
-
 .colored-box {
   background-color:red; 
-  padding: 5vh; /* fixed size despites terminal size */
-  margin-bottom: 20vh;
+  padding: 3vh;
+  margin-bottom: 5vh;
+}
 
 @media (max-width: 768px) {
-  font-size: 14px; /* Adjusted font size for smaller screens */
-  padding: 2px; /* Adjusted padding for smaller screens */
-  margin-bottom: 0vh; /* Adjusted margin for smaller screens */
+  .colored-box {
+    background-color:red; 
+    padding: 0vh;
+    font-size: 10px; /* Adjusted font size for smaller screens */padding: 1vh; /* Adjusted padding for smaller screens */
+    margin-bottom: 0vh; /* Adjusted margin for smaller screens */
   }
 }
 /* there no hover effet provided by BootStrap 5.3.0 */

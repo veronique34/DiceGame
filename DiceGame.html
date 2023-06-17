@@ -6,10 +6,12 @@
         screen on mobile devices.
         No initial zoom is applied
         page is displayed at 1:1 scale
-        force LANDSCAPE mode
+        force PORTRAIT mode
         disable the ability to zoom
-        All these settings can potentially be modified later depending on the browser and the smartphone -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=landscape">
+        All these settings can potentially be modified later depending 
+        on the browser and the smartphone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, 
+    maximum-scale=1, user-scalable=no, orientation=portrait">
     <meta name="description" content="Board Game with dice for two players">
     <meta name="author" content="Veronique Knight">
     <!--link to the local Bootstrap 5.3.0 library  -->
@@ -18,102 +20,101 @@
     <link rel="stylesheet" href="./DiceGame.css">
     <title>Game of Dices</title>
 </head>
-
-<!-- background container overlapped by the foreground container-->
-
-
-<body > <!--definition of the background colours different for each player --> 
+<body > 
+    <!-- background container bi-colored overlapped by the foreground container-->
     <div class="background-container container-fluid d-flex flex-column "> 
         <div class="row flex-fill">
             <div class="col" style="background-color: gainsboro;"></div>
             <div class="col" style="background-color: white"></div>
         </div>
     </div> 
-    <!--definition of the foreground display as a whole Bootstrap container--> 
+    <!--foreground Bootstrap container --> 
     <div class="overlap-container container-fluid d-flex flex-column">
-    <!---------------------------------------------------------------->
-    <!--Title and button (+) to start a new game                        -->
-    <!---------------------------------------------------------------->
-    <header class="row align-items-start">   
-        <h2 class="col text-center">BORD GAME</h2>  
-        <div class="text-center">
-            <p>New Game</p>
-            <img id="newGame" src="./images/plus-circle.svg" width="50" height="50" 
-            alt="clickable start of new game" 
-            onclick="selectNewGame()" touchstart="selectNewGame()" class="hover-effect" >
-
-        </div>
-
-    </header>
-    <!------------------------------------------------------------------------->
-    <!--Display of Global scores and button to throw dice + display dice value-->
-    <!------------------------------------------------------------------------->
-    <main class="row flex-grow-1 align-items-center"> 
-        <!-- flex-grow-1 allows the assignement of the remaining space to this row -->
-        <div class="col-4" >
-            <span>
-                <h3 id="textPlayer1">PLAYER 1 : </h3>
-                <img id="tickPlayer1" src="./images/circle.svg" width="25" height="25" 
-                alt="selectable player" class="hover-effect"
-                onclick="selectPlayer1()" 
-                touchstart="selectPlayer1()" >
-            </span>
-            <h1 id="globalScore1" class="text-center">0</h1>
-        </div>
-        <div class="col-4 ">
+        <!----------------------------------------------------------------
+        <--                                                  
+        <-- the user can select the button (+) to start a new game   
+        <---------------------------------------------------------------->                     
+        <header class="row align-items-start">   
             <div class="text-center">
-                <p >Throw Dice</p>
-                <img id="diceIcon" src="./images/Dice-Image.JPG" width="75" height="75" 
-                alt="Clickable Image of the Dice" onclick="throwDice()" 
-                touchstart="throwDice()" 
-                class="hover-effect svg-image" >          
-            </div>               
-        </div>
-        <div class="col-4 ">
-            <span >
-                <h3 id="textPlayer2">PLAYER 2 : </h3>
-                <img id="tickPlayer2" src="./images/circle.svg" width="25" height="25" 
-                alt="selectable player" class="hover-effect"
-                onclick="selectPlayer2()" 
-                touchstart="selectPlayer2()" >
+                <p>New Game</p>
+                <img id="newGame" src="./images/plus-circle.svg" 
+                alt="clickable start of new game" class="hover-effect" 
+                onclick="selectNewGame()" ontouchstart="selectNewGame()">
+            </div>
+        </header>
+        <!------------------------------------------------------------------------->
+        <!--Display of Global scores and button to throw dice + display dice value -->
+        <!-- the user can click on the dice to make it roll, but first  -->
+        <!-- can select which player start the game with a tick on the box-->
+        <!------------------------------------------------------------------------->
+        <main class="row flex-grow-1 align-items-center"> 
+        <!-- flex-grow-1 allows the assignement of the remaining space to this row -->
+            <div class="col-4" >
+                <span>
+                    <h3 id="textPlayer1">PLAYER 1 </h3>
+                    <img id="tickPlayer1" src="./images/circle.svg" 
+                    alt="selectable player" class="hover-effect"
+                    onclick="selectPlayer1()" 
+                    ontouchstart="selectPlayer1()" >
+                </span>
+                <h1 id="globalScore1" class="text-center">0</h1>
+            </div>
+            <div class="col-4 ">
+                <div class="text-center">
+                    <p >Throw Dice</p>
+                    <img id="diceIcon" src="./images/Dice-Image.JPG" 
+                    alt="Clickable Image of the Dice" class="hover-effect"
+                    onclick="throwDice()" 
+                    ontouchstart="throwDice()" >          
+                </div>               
+            </div>
+            <div class="col-4 ">
+                <span >
+                    <h3 id="textPlayer2">PLAYER 2 </h3>
+                    <img id="tickPlayer2" src="./images/circle.svg" 
+                    alt="selectable player" class="hover-effect"
+                    onclick="selectPlayer2()" 
+                    ontouchstart="selectPlayer2()" >
            
-            </span>
-            <h1 id="globalScore2" class="text-center">0</h1>
-        </div>
-    </main>
-    <!---------------------------------------------------------------->
-    <!--Display of round scores & button !+! to hold and add round to global score-->
-    <!---------------------------------------------------------------->
-    <footer class="row" >
-        <div class="col-4 ">
-            <div class="col d-flex justify-content-center align-items-center">
-                <div class="colored-box">
-                    <p> Current </p>
-                    <h2 id="roundScore1" class="text-center">0</h2>
+                </span>
+                <h1 id="globalScore2" class="text-center">0</h1>
+            </div>
+        </main>
+        <!---------------------------------------------------------------->
+        <!--Display of round scores                                      -->
+        <!--the user can click on the button !+! to hold                -->
+        <!-- and add round to global score                              -->
+        <!---------------------------------------------------------------->
+        <footer class="row" >
+            <div class="col-4 ">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <div class="colored-box">
+                        <p> Current </p>
+                        <h2 id="roundScore1" class="text-center">0</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4 ">
-         <div class="text-center" ">    
-            <p>Hold</p>
-            <img id="holdScore" src="./images/box-arrow-in-down.svg" width="50" height="50" 
-            alt="hold the points in the global score" 
-            onclick="holdInGlobalScore()" touchstart="holdInGlobalScore()" class="hover-effect" >
-           
-          </div>
-        </div>
-        <div class="col-4 ">
-            <div class="col d-flex justify-content-center align-items-center">
-                <div class="colored-box">
-                    <p> Current </p>
-                    <h2 id="roundScore2" class="text-center">0</h2>
+            <div class="col-4 ">
+                <div class="text-center" ">    
+                    <p>Hold</p>
+                    <img id="holdScore" src="./images/box-arrow-in-down.svg" 
+                    alt="hold the points in the global score" 
+                    class="hover-effect"onclick="holdInGlobalScore()" 
+                    ontouchstart="holdInGlobalScore()"  >
                 </div>
             </div>
-        </div>
-    </footer>
+            <div class="col-4 ">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <div class="colored-box">
+                        <p> Current </p>
+                        <h2 id="roundScore2" class="text-center">0</h2>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     <!-- Bootstrap JavaScript -->
     <script src="./bootstrap/bootstrap.bundle.min.js"></script>
     <script src="DiceGame.js"></script>
-</div>
 </body>
 </html>

@@ -3,26 +3,27 @@
 @font-face {
   font-family: 'Lato-Black';
   src: url('./fonts/Lato-Black.ttf') format('truetype');
-  font-style: normal;
 }
 body {
   font-family: 'Lato-Black', Arial, sans-serif;
+  font-style: normal;
 }
 /* bi-coloured background */
 .background-container {
   position: absolute;
-  height: 100vh;
   z-index: 1;
-  border: 3em inset burlywood;
+  height: 100vh;
+  box-sizing: border-box;
+  border: 2vw inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
 /* foreground container */
 .overlap-container {
   position: absolute;
-  height: 100vh;
   z-index: 2;
-  padding: 20px;
-  border: 3em inset burlywood;
+  height: 100vh;
+  padding: 2vw;
+  border: 5vh inset burlywood;
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
 
@@ -51,15 +52,13 @@ span {
 
 .colored-box {
   background-color:red; 
-  color: #ffffff; 
-  padding: 20px; /* fixed size despites terminal size */
-  margin-bottom: 40px;
+  padding: 5vh; /* fixed size despites terminal size */
+  margin-bottom: 20vh;
 
 @media (max-width: 768px) {
   font-size: 14px; /* Adjusted font size for smaller screens */
-  padding: 10px; /* Adjusted padding for smaller screens */
-  margin-bottom: 20px; /* Adjusted margin for smaller screens */
-
+  padding: 2px; /* Adjusted padding for smaller screens */
+  margin-bottom: 0vh; /* Adjusted margin for smaller screens */
   }
 }
 /* there no hover effet provided by BootStrap 5.3.0 */

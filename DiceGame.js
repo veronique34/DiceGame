@@ -116,7 +116,7 @@ function selectNewGame() {
   globalScoreElement2.textContent = globalScore2; 
   tickPlayerElement1.src = "./images/circle.svg";
   tickPlayerElement2.src = "./images/circle.svg";
-  textPlayerElement2.textContent = "PLAYER 1 : ";
+  textPlayerElement1.textContent = "PLAYER 1 : ";
   textPlayerElement2.textContent = "PLAYER 2 : ";
   textPlayerElement1.style.color = 'black';
   textPlayerElement2.style.color = 'black';
@@ -192,12 +192,12 @@ function addHoverEffect() {
 myImage.addEventListener('touchstart', addHoverEffect);
 */
 function removeHoverEffect() {
-  tickPlayerElement1.classList = remove('hover-effect');
-  tickPlayerElement2.classList = remove('hover-effect');
-  diceIconElement.classList = remove('hover-effect');
-  diceIconElement.classList = remove('hover-effect');
-  holdScoreElement.classList = remove('hover-effect');
-  newGameElement.classList = remove('hover-effect'); 
+  tickPlayerElement1.classList.remove('hover-effect');
+  tickPlayerElement2.classList.remove('hover-effect');
+  diceIconElement.classList.remove('hover-effect');
+  diceIconElement.classList.remove('hover-effect');
+  holdScoreElement.classList.remove('hover-effect');
+  newGameElement.classList.remove('hover-effect'); 
 }
 
 

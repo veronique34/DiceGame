@@ -5,7 +5,10 @@
   src: url('./fonts/Lato-Black.ttf') format('truetype');
   font-style: normal;
 }
-/* 2 sided background */
+body {
+  font-family: 'Lato-Black', Arial, sans-serif;
+}
+/* bi-coloured background */
 .background-container {
   position: absolute;
   height: 100vh;
@@ -23,9 +26,6 @@
   box-shadow: 5px 10px 5px 10px rgba(34, 36, 34, 0.699);
 }
 
-body {
-  font-family: 'Lato-Black', Arial, sans-serif;
-}
 h1 {
   font-size: 300%;
   color: darkred;
@@ -35,6 +35,7 @@ color: darkgrey;
 }
 p, h3 {
 color: black;
+text-align: center;
 }
 h1, h2, h3, p, img {margin: 5px; }
 
@@ -53,8 +54,14 @@ span {
   color: #ffffff; 
   padding: 20px; /* fixed size despites terminal size */
   margin-bottom: 40px;
-}
 
+@media (max-width: 768px) {
+  font-size: 14px; /* Adjusted font size for smaller screens */
+  padding: 10px; /* Adjusted padding for smaller screens */
+  margin-bottom: 20px; /* Adjusted margin for smaller screens */
+
+  }
+}
 /* there no hover effet provided by BootStrap 5.3.0 */
 .hover-effect {
 

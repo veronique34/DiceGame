@@ -2,7 +2,8 @@
 /* definition of constants           */
 /*------------------------------------*/
 const choosePlayer = "To Start The Game, Please Select The First Player";
-const theWinnerIs = " Hurray!!, the winner of this game is Player "
+const theWinnerIs = " WINNER ! ";
+const maximumScore = 100;
 /*-------------------------------------------------*/
 /* definition of HTML elements to be modified by JS*/
 /*-------------------------------------------------*/
@@ -17,6 +18,13 @@ const holdScoreElement = document.getElementById('holdScore');      /*img*/
 const textPlayerElement1 = document.getElementById('textPlayer1');    /*h3*/
 const textPlayerElement2 = document.getElementById('textPlayer2');    /*h3*/
 const newGameElement = document.getElementById("newGame");
+const diceFaceImage = /* image of each face of the dice */
+['./images/dice-1.svg',
+  './images/dice-2.svg',
+  './images/dice-3.svg',
+  './images/dice-4.svg',
+  './images/dice-5.svg',
+  './images/dice-6.svg'];
 console.log(tickPlayerElement1);
 console.log(tickPlayerElement2);
 console.log(diceIconElement);
@@ -39,6 +47,12 @@ roundScoreElement1.textContent = roundScore1;
 roundScoreElement2.textContent = roundScore2;
 globalScoreElement1.textContent = globalScore1; 
 globalScoreElement2.textContent = globalScore2;  
+tickPlayerElement1.addEventListener('touchend', removeHoverEffect);
+tickPlayerElement2.addEventListener('touchend', removeHoverEffect);
+diceIconElement.addEventListener('touchend', removeHoverEffect);
+holdScoreElement.addEventListener('touchend', removeHoverEffect);
+holdScoreElement.addEventListener('touchend', removeHoverEffect);
+
 /*-------------------------------------------------*/
 /* definition of local fonctions   */
 /*-------------------------------------------------*/
@@ -46,25 +60,20 @@ globalScoreElement2.textContent = globalScore2;
 function getRandomNumber() {
   return Math.floor(Math.random() * 6) + 1;
 }
-/* function that displays the element of a table */
-/* after having randomly selected its table index */
-/* and calculate the current score */
+/* function after having randomly selected the dice number */
+/* displays the correct dice face */
+/* calculate the current score */
 
 function throwDice() {
+  if (globalScore1 >= maximumScore) {return;}
+  if (globalScore2 >= maximumScore) {return;}
   if (currentPlayer ==0)
   {
     alert(choosePlayer);
     return;}
-  let diceFaceImage = ['./images/dice-1.svg',
-  './images/dice-2.svg',
-  './images/dice-3.svg',
-  './images/dice-4.svg',
-  './images/dice-5.svg',
-  './images/dice-6.svg'];
   let diceFace;
   diceFace = getRandomNumber();
   diceIcon.src = diceFaceImage[diceFace-1];
-  
   if (currentPlayer==1) {
     if (diceFace == 1)
       {roundScore1=0;
@@ -144,9 +153,9 @@ function holdInGlobalScore()
     globalScoreElement1.textContent = globalScore1;
     roundScore1 = 0;
     roundScoreElement1.textContent = roundScore1;
-    if (globalScore1 >= 100)
+    if (globalScore1 >= maximumScore)
     { textPlayerElement1.style.color = 'red';
-      textPlayerElement1.textContent = "WINNER !";
+      textPlayerElement1.textContent = theWinnerIs;
       console.log("globalScore1",globalScoreElement1.textContent);
       console.log("globalScore2",globalScoreElement2.textContent);
       console.log("roundScore1",roundScoreElement1.textContent);
@@ -161,9 +170,9 @@ function holdInGlobalScore()
     globalScoreElement2.textContent = globalScore2;
     roundScore2 = 0;
     roundScoreElement2.textContent = roundScore2;
-    if (globalScore2 >= 100)
+    if (globalScore2 >= maximumScore)
     { textPlayerElement2.style.color = 'red';
-      textPlayerElement2.textContent = "WINNER !";
+      textPlayerElement2.textContent = theWinnerIs;
       console.log("globalScore1",globalScoreElement1.textContent);
       console.log("globalScore2",globalScoreElement2.textContent);
       console.log("roundScore1",roundScoreElement1.textContent);
@@ -190,11 +199,5 @@ function removeHoverEffect() {
   holdScoreElement.classList = remove('hover-effect');
   newGameElement.classList = remove('hover-effect'); 
 }
-
-tickPlayerElement1.addEventListener('touchend', removeHoverEffect);
-tickPlayerElement2.addEventListener('touchend', removeHoverEffect);
-diceIconElement.addEventListener('touchend', removeHoverEffect);
-holdScoreElement.addEventListener('touchend', removeHoverEffect);
-holdScoreElement.addEventListener('touchend', removeHoverEffect);
 
 

@@ -1,20 +1,21 @@
-# Project Dice Game
+# Project Board Game with dice
 ***************************************
 ### General Info
 ***
 Rules of the game
 The game includes 2 players on a single screen. 
 Each player has a temporary score (ROUND) and an overall score (GLOBAL). 
-initially, the player has his ROUND initialized to 0 
-and can roll a dice as many times as he wishes. 
-Except that if he/she rolls a 1, his ROUND score is lost and his turn ends.
+Initially, the player has his/her ROUND initialized to 0.
+He/she can roll a dice as many times as he/she wishes. 
 The result of a throw is added to the ROUND.
+Except that if the result is 1, the ROUND score is lost and his/her turn ends.
 
-During his turn, the player can decide at any time to:
 
-Click on the "Hold" option, which sends the points of the ROUND to the GLOBAL. 
-It will then be the other player's turn.
-Roll the dice. 
+During his/her turn, the player can decide at any time to:
+
+-Click on the "Hold" option, the ROUND points are added to the GLOBAL score. 
+  It will then be the other player's turn.
+-Roll the dice. 
 
 The first player to reach 100 points on the GLOBAL score wins the game.
 
@@ -29,5 +30,5 @@ A list of technologies used within the project:
 * bootstrap.bundle.min.js
 * bootstrap.css
 ## EXECUTION:
-* sur : https://veronique34.github.io/DiceGame/DiceGame.html
+* https://veronique34.github.io/DiceGame/DiceGame.html
 

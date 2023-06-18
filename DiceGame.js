@@ -176,7 +176,7 @@ function holdInGlobalScore()
   }
 }
 /*-------------------------------------------------
-/* fct removes all hover effet at once. It is      
+/* function removes all hover effet at once. It is      
 /* called in JS with an event listener on 'touchend'   
 /* , while touching the screen is directly delt with 
 /* in the html with 'ontouchscreen'

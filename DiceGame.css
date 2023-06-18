@@ -29,28 +29,33 @@ body {
 img {
   width:8vh; 
   height: 8vh;
+  margin: 1vh; 
 }
+
 #diceIcon {
-  width:75px; 
-  height: 75px; 
+  width:20vh; 
+  height:20vh; 
 }
+
 #tickPlayer1, #tickPlayer2 {
   width:5vh; 
   height: 5vh; 
 }
+
 h1 {
-  font-size: 300%;
+  font-size: 12vh;
   color: darkred;
 }
+
 h2,h4 {
 color: darkgrey; 
+font-size: 10vh;
 }
 p, h3 {
 color: black;
 text-align: center;
 font-size: 5vh;
 }
-h1, h2, h3, p, img {margin: 1vh; }
 
 span {
   display: flex;
@@ -58,17 +63,22 @@ span {
   margin: 5vh;
   color: darkgrey; 
 }
+
+.inline-block {
+  display: inline-block;
+}
+
 .colored-box {
   background-color:red; 
   padding: 3vh;
   margin-bottom: 5vh;
 }
-
 @media (max-width: 768px) {
   .colored-box {
     background-color:red; 
     padding: 0vh;
-    font-size: 10px; /* Adjusted font size for smaller screens */padding: 1vh; /* Adjusted padding for smaller screens */
+    font-size: 10px; /* Adjusted font size for smaller screens */
+    padding: 1vh; /* Adjusted padding for smaller screens */
     margin-bottom: 0vh; /* Adjusted margin for smaller screens */
   }
 }
@@ -83,6 +93,10 @@ span {
   /* hand icon */
   cursor: pointer;
 }
-.inline-block {
-  display: inline-block;
-}
+/* to remmove the blinking bar and the I shape over non selectable
+node elements */
+
+h1, h2, h3, h4, p, #roundScore1, #roundScore2{
+  user-select: none;
+  cursor: default;
+ }
